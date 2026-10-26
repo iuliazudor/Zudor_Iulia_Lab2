@@ -11,7 +11,14 @@ namespace Zudor_Iulia_Lab2.Models
 
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        public string FullName => $"{LastName} {FirstName}";
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
 
         public ICollection<Book>? Books { get; set; }
     }
